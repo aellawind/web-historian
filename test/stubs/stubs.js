@@ -38,5 +38,6 @@ exports.Response = function() {
     console.log("Response.end called.");
     self._ended = true;
     self._data = data;
+    console.log("DATA", data);
   }
 };

@@ -15,4 +15,14 @@ exports.serveAssets = function(res, asset) {
   // (Static files are things like html (yours or archived from others...), css, or anything that doesn't change often.)
 };
 
+exports.sendResponse = function(res,data,status) {
+	status = status || 200;
+  res.writeHead(status,headers);
+  res.end(JSON.stringify(data));
+};
+
+exports.send404 = function(res) {
+	exports.sendResponse(res, "This page does not exist.", 404);
+}
+
 // As you progress, keep thinking about what helper functions you can put here!
